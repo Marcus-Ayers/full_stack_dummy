@@ -2,15 +2,24 @@
 <html>
   <head>
     <title>FullStackDummy</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="A Dummy Full-stack application for testing."/>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="turbolinks-cache-control" content="no-preview">
+
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
-  <body>
-    <%= yield %>
+ 
+    <body class="<%= controller_name %> <%= action_name %>">
+  <%= render "shared/navigation" %>
+  <%= yield %>
+  <%= render "shared/footer" %>
+
   </body>
 </html>
